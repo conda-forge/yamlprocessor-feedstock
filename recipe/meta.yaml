@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yamlprocessor-{{ version }}.tar.gz
-  sha256: 32deb1126005e08991c1e6154eb2fd6538a4826a86506263f7d51eb8d0811e24
+  sha256: 296374a6556b2b11b8ed8dfe4bab9f9f58e0c7b8538edaf0993c08360e2bcf42
 
 build:
   noarch: python
