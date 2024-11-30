@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yamlprocessor-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yamlprocessor-{{ version }}.tar.gz
   sha256: 9c936a0bc569c345e92cc241621b9b4f3dc313fa234cc72b00a33b498e8f1a5c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   entry_points:
     - yp-data = yamlprocessor.dataprocess:main
     - yp-schema = yamlprocessor.schemaprocess:main
@@ -20,12 +20,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - pytest-runner
   run:
     - jmespath
     - jsonschema
-    - python >=3.7
+    - python >={{ python_min }}
     - python-dateutil
     - ruamel.yaml
 
@@ -38,6 +38,7 @@ test:
     - yp-schema --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/JCSDA-internal/yamlprocessor
