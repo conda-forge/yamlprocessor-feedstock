@@ -1,5 +1,5 @@
 {% set name = "yamlprocessor" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yamlprocessor-{{ version }}.tar.gz
-  sha256: 9c936a0bc569c345e92cc241621b9b4f3dc313fa234cc72b00a33b498e8f1a5c
+  sha256: 62a7a5bc89a284c8e72d29c92dd7ae9a9b3904c38c29b551a6773c2e7322a843
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   entry_points:
     - yp-data = yamlprocessor.dataprocess:main
     - yp-schema = yamlprocessor.schemaprocess:main
