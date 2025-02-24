@@ -22,6 +22,7 @@ requirements:
     - pip
     - python {{ python_min }}
     - pytest-runner
+    - setuptools
   run:
     - jmespath
     - jsonschema
@@ -55,4 +56,3 @@ about:
 extra:
   recipe-maintainers:
     - matthewrmshin
-    - KrissyRayD242
